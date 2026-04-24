@@ -16,7 +16,6 @@
     --spacing: 0.25rem;
     --container-sm: 24rem;
     --container-md: 28rem;
-    --container-lg: 32rem;
     --text-base: 1rem;
     --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
@@ -386,8 +385,14 @@
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
+  .right-4 {
+    right: calc(var(--spacing) * 4);
+  }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
+  }
+  .bottom-4 {
+    bottom: calc(var(--spacing) * 4);
   }
   .stack {
     @layer daisyui.l1.l2.l3 {
@@ -491,20 +496,11 @@
   .m-4 {
     margin: calc(var(--spacing) * 4);
   }
-  .m-5 {
-    margin: calc(var(--spacing) * 5);
-  }
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
-  }
-  .mt-5 {
-    margin-top: calc(var(--spacing) * 5);
-  }
-  .mt-6 {
-    margin-top: calc(var(--spacing) * 6);
   }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
@@ -555,19 +551,21 @@
   .hidden {
     display: none;
   }
+  .aspect-4\/5 {
+    aspect-ratio: 4/5;
+  }
   .size-7 {
     width: calc(var(--spacing) * 7);
     height: calc(var(--spacing) * 7);
-  }
-  .size-full {
-    width: 100%;
-    height: 100%;
   }
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
   .h-auto {
     height: auto;
+  }
+  .h-full {
+    height: 100%;
   }
   .w-full {
     width: 100%;
@@ -577,9 +575,6 @@
   }
   .flex-1 {
     flex: 1;
-  }
-  .shrink-0 {
-    flex-shrink: 0;
   }
   .grow {
     flex-grow: 1;
@@ -671,6 +666,9 @@
   }
   .bg-gray-200 {
     background-color: var(--color-gray-200);
+  }
+  .object-contain {
+    object-fit: contain;
   }
   .object-cover {
     object-fit: cover;
@@ -831,11 +829,6 @@
       max-width: var(--container-sm);
     }
   }
-  .sm\:flex-1 {
-    @media (width >= 40rem) {
-      flex: 1;
-    }
-  }
   .sm\:grow-0 {
     @media (width >= 40rem) {
       flex-grow: 0;
@@ -864,11 +857,6 @@
   .sm\:justify-items-center {
     @media (width >= 40rem) {
       justify-items: center;
-    }
-  }
-  .sm\:gap-5 {
-    @media (width >= 40rem) {
-      gap: calc(var(--spacing) * 5);
     }
   }
   .sm\:object-contain {
@@ -900,16 +888,6 @@
   .lg\:w-1\/2 {
     @media (width >= 64rem) {
       width: calc(1 / 2 * 100%);
-    }
-  }
-  .lg\:max-w-2\/3 {
-    @media (width >= 64rem) {
-      max-width: calc(2 / 3 * 100%);
-    }
-  }
-  .lg\:max-w-lg {
-    @media (width >= 64rem) {
-      max-width: var(--container-lg);
     }
   }
   .lg\:min-w-sm {
