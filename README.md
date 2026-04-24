@@ -16,6 +16,14 @@
 
 2. `npm install`
 
+### Create your own branch and add to remote
+
+1. `git checkout -b <branch-name>`
+
+2. `git push -u origin <branch-name>`
+
+_NOTE: `<>` is a placeholder; replace with actual branch name_
+
 ### Recreate database
 
 1. Copy queries from `data/FreakyFashion.sql`
@@ -24,14 +32,6 @@
    **_IMPORTANT: Keep line 1 in the query editor!_**
 
 3. Run queries
-
-### Create your own branch and add to remote
-
-1. `git checkout -b <branch-name>`
-
-2. `git push -u origin <branch-name>`
-
-_NOTE: `<>` is a placeholder; replace with actual branch name_
 
 ### Start dev server
 
