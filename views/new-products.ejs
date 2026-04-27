@@ -1,16 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/stylesheets/styles.css">
-  <title><%= title %></title>
-</head>
-  <%- include("partials/admin.ejs") %>
-    <main>
-    <h2>Ny produkt</h2>
-    <form action="#" method="post"></form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <%- include("partials/admin.ejs") %>
+    <!-- TODO: Fix input widths -->
+    <main class="p-4 w-full">
+      <h2 class="mb-5 text-3xl font-bold">Ny produkt</h2>
+      <form action="#" method="post" class="space-y-10">
+        <!-- Namn input -->
+        <div class="form-div">
+          <label for="name" class="font-bold">Namn</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Ange namn"
+            class="input-base"
+          />
+        </div>
+
+        <!-- Beskrivning input -->
+        <div class="form-div">
+          <label for="description" class="font-bold">Beskrivning</label>
+          <textarea
+            name="description"
+            id="description"
+            placeholder="Ange beskrivning"
+            class="input-base"
+          ></textarea>
+        </div>
+
+        <!-- Välj fil input -->
+        <div class="form-div">
+          <label for="image" class="font-bold">Bild</label>
+          <input type="file" name="image" id="image" class="hidden" />
+          <label for="image" tabindex="0" class="button">Välj fil</label>
+        </div>
+
+        <!-- Märke input -->
+        <div class="form-div">
+          <label for="brand" class="font-bold">Märke</label>
+          <input
+            type="text"
+            name="brand"
+            id="brand"
+            class="input-base"
+            placeholder="Ange märke"
+          />
+        </div>
+
+        <!-- SKU input -->
+        <div class="form-div">
+          <label for="sku" class="font-bold">SKU</label>
+          <input
+            type="text"
+            name="sku"
+            id="sku"
+            class="input-base"
+            placeholder="Ange SKU"
+          />
+        </div>
+
+        <!-- Pris input -->
+        <div class="form-div">
+          <label for="price" class="font-bold">Pris</label>
+          <input
+            type="number"
+            name="price"
+            id="price"
+            class="input-base no-arrows"
+          />
+        </div>
+
+        <!-- Kategori dropdown -->
+        <div class="form-div">
+          <label for="category" class="font-bold">Kategori</label>
+          <select name="category" id="category" class="input-base">
+            <option value="" disabled selected hidden>Välj kategori</option>
+            <option value="kläder">Kläder</option>
+            <option value="accessoarer">Accessoarer</option>
+            <option value="skor">Skor</option>
+          </select>
+        </div>
+
+        <button type="submit" class="button mt-5">Lägg till</button>
+      </form>
     </main>
-  </div>
-</body>
+  </body>
 </html>
