@@ -22,10 +22,12 @@
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.2.4",
-    "tailwindcss": "^4.2.4",
     "browser-sync": "^3.0.4",
     "concurrently": "^9.2.1",
     "daisyui": "^5.5.19",
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.14",
+    "prettier": "^3.8.3",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "tailwindcss": "^4.2.4"
   }
 }
