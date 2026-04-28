@@ -8,8 +8,7 @@
   </head>
   <body>
     <%- include("partials/admin.ejs") %>
-    <!-- TODO: Fix input widths -->
-    <main class="p-4 w-full">
+    <main class="w-full p-4">
       <h2 class="mb-5 text-3xl font-bold">Ny produkt</h2>
       <form action="#" method="post" class="space-y-10">
         <!-- Namn input -->
@@ -20,7 +19,7 @@
             name="name"
             id="name"
             placeholder="Ange namn"
-            class="input-base"
+            class="input-base max-w-xs"
           />
         </div>
 
@@ -31,7 +30,7 @@
             name="description"
             id="description"
             placeholder="Ange beskrivning"
-            class="input-base"
+            class="input-base max-w-lg"
           ></textarea>
         </div>
 
@@ -49,7 +48,7 @@
             type="text"
             name="brand"
             id="brand"
-            class="input-base"
+            class="input-base max-w-lg"
             placeholder="Ange märke"
           />
         </div>
@@ -61,7 +60,7 @@
             type="text"
             name="sku"
             id="sku"
-            class="input-base"
+            class="input-base max-w-28"
             placeholder="Ange SKU"
           />
         </div>
@@ -73,14 +72,14 @@
             type="number"
             name="price"
             id="price"
-            class="input-base no-arrows"
+            class="input-base no-arrows max-w-28"
           />
         </div>
 
         <!-- Kategori dropdown -->
         <div class="form-div">
           <label for="category" class="font-bold">Kategori</label>
-          <select name="category" id="category" class="input-base">
+          <select name="category" id="category" class="input-base max-w-lg">
             <option value="" disabled selected hidden>Välj kategori</option>
             <option value="kläder">Kläder</option>
             <option value="accessoarer">Accessoarer</option>

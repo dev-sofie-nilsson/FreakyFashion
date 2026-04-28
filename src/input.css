@@ -8,10 +8,10 @@
     @apply flex flex-col gap-1;
   }
   .input-base {
-    @apply border-2 rounded-md p-2;
+    @apply rounded-md border-2 p-2;
   }
   .button {
-    @apply cursor-pointer rounded-md border-2 text-center w-24 p-2 font-bold;
+    @apply w-28 cursor-pointer rounded-md border-2 p-2 text-center font-bold;
   }
   .no-arrows::-webkit-outer-spin-button,
   .no-arrows::-webkit-inner-spin-button {
