@@ -14,4 +14,8 @@ router.get("/products/new", (req, res) => {
   res.render("new-products", { title: "Administration"})
 });
 
+router.get("/categories/new", (req, res) => {
+  res.render("admin-categories-new", { title: "Administration"})
+});
+
 module.exports = router;
