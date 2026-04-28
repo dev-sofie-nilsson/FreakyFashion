@@ -6,4 +6,8 @@ router.get("/", (req, res) => {
   res.render("admin", { title: "admin" });
 });
 
+router.get("/products/new", (req, res) => {
+  res.render("new-products", { title: "Administration"})
+});
+
 module.exports = router;
