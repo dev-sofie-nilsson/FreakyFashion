@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", function (req, res, next) {
-  res.render("categories", { title: "Category" });
+// TODO: Make route dynamic
+router.get("/", (req, res) => {
+  res.render("categories", { title: "categories" });
 });
 
 module.exports = router;
