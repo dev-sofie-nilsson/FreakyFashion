@@ -3,7 +3,7 @@ const router = express.Router();
 
 // TODO: Make route dynamic
 router.get("/", (req, res) => {
-  res.render("products", { title: "Product details" });
+  res.render("product-details", { title: "Product details" });
 });
 
 module.exports = router;
