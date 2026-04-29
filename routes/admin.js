@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/categories", (req, res) => {
-  res.render("admin-categories", { title: "Administration"})
+  res.render("admin-categories", { title: "Administration" });
 });
 
 router.get("/products", (req, res) => {
@@ -15,7 +15,10 @@ router.get("/products", (req, res) => {
 });
 
 router.get("/products/new", (req, res) => {
-  res.render("new-products", { title: "Administration"})
+  res.render("new-products", {
+    title: "Administration",
+    layout: "layouts/admin-layout",
+  });
 });
 
 module.exports = router;
