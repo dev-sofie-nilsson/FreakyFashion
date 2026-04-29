@@ -7,15 +7,18 @@ router.get("/", (req, res) => {
 });
 
 router.get("/categories", (req, res) => {
-  res.render("admin-categories", { title: "Administration"})
+  res.render("admin-categories", { title: "Administration" });
 });
 
 router.get("/products", (req, res) => {
-  res.render("admin-products", { title: "Administration"})
+  res.render("admin-products", { title: "Administration" });
 });
 
 router.get("/products/new", (req, res) => {
-  res.render("new-products", { title: "Administration"})
+  res.render("admin-new-products", {
+    title: "Administration",
+    layout: "layouts/admin-layout",
+  });
 });
 
 router.get("/categories/new", (req, res) => {
