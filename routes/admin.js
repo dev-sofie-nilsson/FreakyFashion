@@ -11,11 +11,11 @@ router.get("/categories", (req, res) => {
 });
 
 router.get("/products", (req, res) => {
-  res.render("admin-products", { title: "Administration"})
+  res.render("admin-products", { title: "Administration" });
 });
 
 router.get("/products/new", (req, res) => {
-  res.render("new-products", {
+  res.render("admin-new-products", {
     title: "Administration",
     layout: "layouts/admin-layout",
   });
