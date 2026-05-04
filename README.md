@@ -26,12 +26,15 @@ _NOTE: `<>` is a placeholder; replace with actual branch name_
 
 ### Recreate database
 
-1. Copy queries from `data/FreakyFashion.sql`
+1. Windows: `npm run db`  
+   Linux/mac: `npm run dbu`
 
-2. Replace line 3 in the `data/FreakyFashion.db` query editor.  
+2. Copy queries from `data/FreakyFashion.sql`
+
+3. Replace line 3 in the `data/FreakyFashion.db` query editor.  
    **_IMPORTANT: Keep line 1 in the query editor!_**
 
-3. Run queries
+4. Run queries
 
 ### Start dev server
 
