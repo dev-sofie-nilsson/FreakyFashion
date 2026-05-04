@@ -8,6 +8,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "concurrently \"npm run server\"  \"npm run browser-sync\"  \"npm run tailwind\"",
+    "db:": "cd data && type nul > FreakyFashion.db && cd ..",
+    "dbu": "cd data && touch FreakyFashion.db && cd ..",
     "server": "nodemon ./bin/www",
     "browser-sync": "browser-sync start --no-notify --proxy \"localhost:8080\" --files \"public, views, routes\"",
     "tailwind": "npx tailwindcss -i ./src/input.css -o ./public/stylesheets/styles.css --watch"
