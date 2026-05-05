@@ -1,0 +1,13 @@
+{
+  "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-sql"],
+  "overrides": [
+    {
+      "files": "*.sql",
+      "options": {
+        "keywordCase": "upper",
+        "dataTypeCase": "upper",
+        "language": "sqlite"
+      }
+    }
+  ]
+}

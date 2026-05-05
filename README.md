@@ -9,6 +9,7 @@
 
 - EJS language support
 - SQLite3 Editor
+- Prettier
 
 ### Clone project and install dependencies
 
@@ -25,6 +26,8 @@
 _NOTE: `<>` is a placeholder; replace with actual branch name_
 
 ### Recreate database
+
+#### Start with step 1 if no FreakyFashion.db in data/ directory, otherwise skip step 1 and continue with steps 2-4.
 
 1. Windows: `npm run db`  
    Linux/mac: `npm run dbu`
