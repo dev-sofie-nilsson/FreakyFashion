@@ -13,17 +13,20 @@ router.get("/categories", (req, res) => {
   });
 });
 
-router.get("/products", (req, res) => {
-  res.render("admin-products", {
+router.get("/products/new", (req, res) => {
+  res.render("admin-products-new", {
     title: "Administration",
     layout: "layouts/admin-layout",
   });
 });
 
-router.get("/products/new", (req, res) => {
-  res.render("admin-products-new", {
+const productService = require("../services/productService");
+router.get("/products", (req, res) => {
+  const products = productService.getAll();
+  res.render("admin-products", {
     title: "Administration",
     layout: "layouts/admin-layout",
+    products,
   });
 });
 

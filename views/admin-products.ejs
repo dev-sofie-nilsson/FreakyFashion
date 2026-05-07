@@ -22,17 +22,13 @@
         </thead>
 
         <tbody>
-          <tr class="even:bg-gray-100">
-            <td class="px-6 py-4 border-l">Svart T-Shirt</td>
-            <td class="px-4 border-l">SVA123</td>
-            <td class="px-4 border-l border-r">199</td>
-          </tr>
-
-          <tr class="even:bg-gray-100">
-            <td class="px-6 py-4 border-l border-b">Vit T-Shirt</td>
-            <td class="px-4 py-4 border-l border-b">VIT123</td>
-            <td class="px-4 border-l border-b border-r">199</td>
-          </tr>
+          <% products.forEach((product, index) => { %>
+            <tr class="even:bg-gray-100 <%= index === products.length - 1 ? 'border-b' : '' %>">
+              <td class="px-6 py-4 border-l"><%= product.name %></td>
+              <td class="px-4 border-l"><%= product.sku %></td>
+              <td class="px-4 border-l border-r"><%= product.price %> kr</td>
+            </tr>
+          <% }) %>
         </tbody>
       </table>
     </div>
