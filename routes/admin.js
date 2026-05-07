@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const productService = require("../services/productservice");
 
-// TODO: Make route dynamic
 router.get("/", (req, res) => {
   res.render("admin", { title: "admin" });
 });
@@ -20,14 +20,18 @@ router.get("/products/new", (req, res) => {
   });
 });
 
-const productService = require("../services/productService");
 router.get("/products", (req, res) => {
-  const products = productService.getAll();
-  res.render("admin-products", {
-    title: "Administration",
-    layout: "layouts/admin-layout",
-    products,
-  });
+  try {
+    const products = productService.getAllProducts();
+    res.render("admin-products", {
+      title: "Administration",
+      layout: "layouts/admin-layout",
+      products,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server error");
+  }
 });
 
 router.get("/categories/new", (req, res) => {
