@@ -59,9 +59,3 @@ typings/
 
 # next.js build output
 .next
-
-# Database files
-*.db
-
-# Tailwind output
-styles.css
