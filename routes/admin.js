@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const productService = require("../services/productservice");
+const productService = require("../services/productService");
 
 router.get("/", (req, res) => {
   res.render("admin", { title: "admin" });
