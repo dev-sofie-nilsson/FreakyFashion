@@ -1,7 +1,9 @@
-const Database = require('better-sqlite3');
+const Database = require("better-sqlite3");
 
-const db = new Database('./data/freakyfashion.db', {
-  verbose: console.log
+const db = new Database("./data/FreakyFashion.db", {
+  verbose: console.log,
 });
+
+db.pragma("foreign_keys = ON");
 
 module.exports = db;
