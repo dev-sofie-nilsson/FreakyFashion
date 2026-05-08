@@ -1,11 +1,20 @@
-CREATE TABLE if NOT EXISTS products (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT NOT NULL,
-  sku TEXT NOT NULL UNIQUE,
-  price INTEGER NOT NULL CHECK (price >= 0)
+-- database: c:\Workspace\Grupparbete-backend\data\FreakyFashion.db
+
+CREATE TABLE IF NOT EXISTS categories (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
 );
 
+INSERT OR IGNORE INTO categories (id, name) VALUES
+(1, 'Kläder'),
+(2, 'Accessoarer'),
+(3, 'Skor');
 
-INSERT INTO products (name, SKU, price) VALUES ('Svart T-Shirt', 'SVA123', 199);
-INSERT INTO products (name, SKU, price) VALUES ('Vit T-Shirt', 'VIT123', 199);
-
+CREATE TABLE IF NOT EXISTS products (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    price DECIMAL(10, 2) NOT NULL,
+    category_id INT,
+    FOREIGN KEY (category_id) REFERENCES categories(id)
+);
