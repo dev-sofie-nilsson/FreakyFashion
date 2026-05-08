@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS products (
   details TEXT NOT NULL,
   image_path TEXT NOT NULL,
   brand TEXT NOT NULL,
-  sku INTEGER NOT NULL UNIQUE,
+  sku TEXT NOT NULL UNIQUE,
   price INTEGER NOT NULL CHECK (price >= 0),
   category_id INTEGER NOT NULL,
   FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE RESTRICT
