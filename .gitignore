@@ -65,3 +65,9 @@ typings/
 
 # Tailwind output
 styles.css
+
+# Prevent further tracking of incorrect file
+productservice.js
+
+# Prevent further tracking of incorrect directory
+hero-info/
