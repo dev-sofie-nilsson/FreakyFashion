@@ -2,12 +2,12 @@
   <a href="#">
     <!-- Container with product img + icon -->
     <div
-      class="relative flex items-center justify-center rounded-t-md p-4 sm:p-2"
+      class="relative flex h-80 items-center justify-center rounded-t-md p-4 sm:p-2"
     >
       <img
         src="<%= product.image_path %>"
         alt="Svart T-shirt"
-        class="sm:max-w-full sm:object-contain"
+        class="size-full object-contain"
       />
       <img
         src="/images/heart.png"
@@ -19,9 +19,9 @@
     <div
       class="flex flex-wrap justify-between gap-2 rounded-b-md px-4 py-2 text-xl font-bold italic"
     >
-      <h3>Svart T-shirt</h3>
-      <p>199 SEK</p>
-      <p class="basis-full font-normal">Levi's</p>
+      <h3><%= product.title %></h3>
+      <p><%= product.price %> SEK</p>
+      <p class="basis-full font-normal"><%= product.brand %></p>
     </div>
   </a>
 </div>
