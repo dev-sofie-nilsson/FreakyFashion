@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS products (
 --     "Detta är inte en orange tröja",
 --     "/images/white-t-shirt.png",
 --     "Microslop",
---     "ABC1234",
+--     "AB234",
 --     199,
 --     1
 --   ),
