@@ -26,7 +26,7 @@
 
   <% if (categories && categories.length > 0) { %>
     <% categories.forEach(category => { %>
-      <a href="/category/<%= category.id %>" class="rounded p-2 hover:text-pink-400">
+      <a href="/categories/<%= category.slug %>" class="rounded p-2 hover:text-pink-400">
         <%= category.name %>
       </a>
     <% }) %>
