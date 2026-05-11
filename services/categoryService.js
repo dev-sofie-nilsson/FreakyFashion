@@ -1,9 +1,7 @@
-const Database = require('better-sqlite3');
-const path = require('path');
-const db = new Database(path.join(__dirname, '../data/FreakyFashion.db'));
+const db = require("../data/data.js");
 
 function getAllCategories() {
-  const stmt = db.prepare('SELECT * FROM categories');
+  const stmt = db.prepare("SELECT * FROM categories");
   return stmt.all();
 }
 
