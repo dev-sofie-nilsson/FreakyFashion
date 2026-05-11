@@ -3,15 +3,22 @@ const router = express.Router();
 const productService = require("../services/productService");
 const categoryService = require("../services/categoryService");
 
-router.get("/:name", (req, res) => {
-  const name = req.params.name;
+router.get("/:categoryName", (req, res) => {
+  const categoryName = req.params.categoryName;
   const categories = categoryService.getAllCategories();
-  const products = productService.getAllProducts();
+  const currentCategory = categories.find(
+    (category) => category.slug === categoryName,
+  );
+
+  const categoryId = currentCategory.id;
+
+  const products = productService.getProductsByCategory(categoryId);
 
   res.render("categories", {
     title: "Categories",
     products,
     categories,
+    categoryName,
   });
 });
 
