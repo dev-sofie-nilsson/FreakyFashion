@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+
+<%- include("partials/header.ejs") %>
+
+<main>
+  <h1>Search Function</h1>
+  <form action="/search" method="GET">
+    <input type="text" name="q" placeholder="Sök efter en produkt">
+    <button type="submit">Sök</button>
+  </form>
+  <a href="/">Visa alla produkter</a>
+</main>
+
+<%- include("partials/footer.ejs") %>
+
+</body>
+</html>
