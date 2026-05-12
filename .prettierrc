@@ -1,5 +1,10 @@
 {
-  "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-sql"],
+  "plugins": [
+    "prettier-plugin-sql",
+    "prettier-plugin-ejs",
+    "prettier-plugin-tailwindcss"
+  ],
+  "tailwindstylesheet": "./src/input.css",
   "overrides": [
     {
       "files": "*.sql",
