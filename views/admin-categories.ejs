@@ -21,18 +21,13 @@
       </thead>
 
       <tbody>
-        <tr class="even:bg-gray-100">
-          <td class="px-6 py-4">Kläder</td>
-        </tr>
+  <% categories.forEach(category => { %>
+    <tr class="even:bg-gray-100">
+      <td class="px-6 py-4"><%= category.name %></td>
+    </tr>
+  <% }) %>
+</tbody>
 
-        <tr class="even:bg-gray-100">
-          <td class="px-6 py-4">Accessoarer</td>
-        </tr>
-
-        <tr class="even:bg-gray-100">
-          <td class="px-6 py-4">Skor</td>
-        </tr>
-      </tbody>
     </table>
   </div>
 </div>
