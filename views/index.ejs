@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
     <link rel="stylesheet" href="/stylesheets/styles.css" />
   </head>
-  <body>
+  <body class="flex min-h-screen flex-col">
     <main>
-      <%- include("partials/header.ejs") %>
-      <%- include("partials/hero.ejs") %>
-      <%- include("partials/spot.ejs") %>
-      <%- include("partials/product-grid.ejs") %>
-      <%- include("partials/footer.ejs") %>
+      <%- include("partials/header.ejs") %> <%- include("partials/hero.ejs") %>
+      <%- include("partials/spot.ejs") %> <%-
+      include("partials/product-grid.ejs") %> <%- include("partials/footer.ejs")
+      %>
     </main>
   </body>
 </html>
