@@ -13,12 +13,12 @@
       <div class="p-4 sm:flex sm:flex-row sm:gap-4">
         <!-- Container with product img + icon -->
         <div
-          class="relative aspect-4/5 rounded-md border sm:w-1/2 lg:max-w-3xl"
+          class="relative aspect-4/5 rounded-md border sm:w-1/2 lg:max-w-2xl"
         >
           <img
             src="/images/ChatGPT_Image_22_apr._2026_09_28_38.png"
             alt="Svart T-shirt"
-            class="h-full object-contain"
+            class="size-full object-contain"
           />
           <img
             src="/images/heart.png"
@@ -38,7 +38,9 @@
             dolores voluptatum voluptas cumque.
           </p>
           <p class="">199 SEK</p>
-          <button class="w-full rounded-md border p-4 sm:w-auto">
+          <button
+            class="w-full rounded-md border p-4 font-bold not-italic sm:w-auto"
+          >
             Lägg i varukorg
           </button>
         </div>
@@ -46,7 +48,9 @@
       <h2 class="mt-10 hidden text-center text-2xl sm:block">
         Liknande produkter
       </h2>
-      <div class="mt-4 hidden grid-cols-3 gap-3 p-4 sm:grid">
+      <div
+        class="mt-4 hidden grid-cols-3 gap-3 p-4 sm:grid lg:mx-auto lg:max-w-[2300px]"
+      >
         <!-- TODO: Temporary fix, make actual logic -->
         <%-include("partials/product-card.ejs", {product: products[0]})%>
         <%-include("partials/product-card.ejs", {product: products[1]})%>
