@@ -1,7 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const productService = require("../services/productService");
+<<<<<<< feature-admin-categories
 const categoryService = require("../services/categoryService");
+=======
+const { addNewCategory } = require("../services/categoryService");
+>>>>>>> main
 
 router.get("/", (req, res) => {
   res.render("admin", { title: "admin" });
@@ -47,6 +51,12 @@ router.get("/categories/new", (req, res) => {
     title: "Administration",
     layout: "layouts/admin-layout",
   });
+});
+
+router.post("/categories/new", (req, res) => {
+  const newCategory = req.body.namn;
+  addNewCategory(newCategory);
+  res.redirect("/admin/categories");
 });
 
 module.exports = router;
