@@ -1,17 +1,28 @@
 const express = require("express");
 const router = express.Router();
 const productService = require("../services/productService");
+<<<<<<< feature-admin-categories
+const categoryService = require("../services/categoryService");
+=======
 const { addNewCategory } = require("../services/categoryService");
+>>>>>>> main
 
 router.get("/", (req, res) => {
   res.render("admin", { title: "admin" });
 });
 
 router.get("/categories", (req, res) => {
-  res.render("admin-categories", {
-    title: "Administration",
-    layout: "layouts/admin-layout",
-  });
+  try {
+    const categories = categoryService.getAllCategories();
+    res.render("admin-categories", {
+      title: "Administration",
+      layout: "layouts/admin-layout",
+      categories,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server error");
+  }
 });
 
 router.get("/products/new", (req, res) => {
