@@ -6,13 +6,7 @@ const categoryService = require("../services/categoryService");
 router.get("/:categoryName", (req, res) => {
   const categoryName = req.params.categoryName;
   const categories = categoryService.getAllCategories();
-  const currentCategory = categories.find(
-    (category) => category.slug === categoryName,
-  );
-
-  const categoryId = currentCategory.id;
-
-  const products = productService.getProductsByCategory(categoryId);
+  const products = productService.getProductsByCategory(categoryName);
 
   res.render("categories", {
     title: "Categories",

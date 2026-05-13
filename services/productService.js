@@ -1,18 +1,36 @@
 const db = require("../data/data.js");
 
 function getAllProducts() {
-  return db.prepare(`
+  return db.prepare("SELECT * FROM products").all();
+}
+
+function getProductsSearch() {
+  return db
+    .prepare(
+      `
     SELECT products.*, categories.name AS category_name
     FROM products
     JOIN categories ON products.category_id = categories.id
-  `).all();
+  `,
+    )
+    .all();
 }
 
-function getProductsByCategory(id) {
-  return db.prepare("SELECT * FROM products WHERE category_id = ?").all(id);
+function getProductsByCategory(slug) {
+  return db
+    .prepare(
+      `
+    SELECT *
+    FROM products
+    INNER JOIN categories ON products.category_id = categories.id
+    WHERE categories.slug = ?
+    `,
+    )
+    .all(slug);
 }
 
 module.exports = {
   getAllProducts,
+  getProductsSearch,
   getProductsByCategory,
 };

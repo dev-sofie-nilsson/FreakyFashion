@@ -7,16 +7,24 @@ router.get("/", (req, res) => {
   const searchQuery = req.query.q;
   const categories = categoryService.getAllCategories();
 
-  const allProducts = productService.getAllProducts();
-  
+  const allProducts = productService.getProductsSearch();
+
   const products = searchQuery
-    ? allProducts.filter(p =>
-        (p.title && p.title.toLowerCase().includes(searchQuery.toLowerCase())) ||
-        (p.category_name && p.category_name.toLowerCase().includes(searchQuery.toLowerCase()))
+    ? allProducts.filter(
+        (p) =>
+          (p.title &&
+            p.title.toLowerCase().includes(searchQuery.toLowerCase())) ||
+          (p.category_name &&
+            p.category_name.toLowerCase().includes(searchQuery.toLowerCase())),
       )
     : [];
 
-  res.render("search", { title: "Sökresultat", searchQuery, categories, products });
+  res.render("search", {
+    title: "Sökresultat",
+    searchQuery,
+    categories,
+    products,
+  });
 });
 
 module.exports = router;
