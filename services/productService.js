@@ -16,8 +16,17 @@ function getProductsSearch() {
     .all();
 }
 
-function getProductsByCategory(id) {
-  return db.prepare("SELECT * FROM products WHERE category_id = ?").all(id);
+function getProductsByCategory(slug) {
+  return db
+    .prepare(
+      `
+    SELECT *
+    FROM products
+    INNER JOIN categories ON products.category_id = categories.id
+    WHERE categories.slug = ?
+    `,
+    )
+    .all(slug);
 }
 
 module.exports = {
