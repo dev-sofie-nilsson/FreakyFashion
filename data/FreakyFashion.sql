@@ -44,7 +44,7 @@ VALUES
     "Microslop",
     "ABC1234",
     199,
-    "orange-t-shirt",
+    "orange-tshirt",
     1
   ),
   (
@@ -54,7 +54,7 @@ VALUES
     "Microslop",
     "AB234",
     199,
-    "vit-t-shirt",
+    "vit-tshirt",
     1
   ),
   (
@@ -64,7 +64,7 @@ VALUES
     "Chattis",
     "ABC34",
     300,
-    "svart-t-shirt",
+    "svart-tshirt",
     1
   ),
   (

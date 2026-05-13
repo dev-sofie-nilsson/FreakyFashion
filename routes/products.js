@@ -13,4 +13,16 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get("/:slug", (req, res) => {
+  const categories = categoryService.getAllCategories();
+  const product = productService.getProductBySlug(req.params.slug);
+  const products = productService.getAllProducts();
+  res.render("product-details", {
+    title: product.title,
+    categories,
+    product,
+    products,
+  });
+});
+
 module.exports = router;
