@@ -7,7 +7,7 @@ const productService = require("../services/productService");
 router.get('/', async (req, res, next) => {
   try {
     const categories = await categoryService.getAllCategories();
-    const products = productService.getAllProducts();
+    const products = await productService.getAllProducts();
 
     res.render('index', {
       title: 'Home',
