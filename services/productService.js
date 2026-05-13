@@ -1,11 +1,19 @@
 const db = require("../data/data.js");
 
 function getAllProducts() {
-  return db.prepare(`
+  return db.prepare("SELECT * FROM products").all();
+}
+
+function getProductsSearch() {
+  return db
+    .prepare(
+      `
     SELECT products.*, categories.name AS category_name
     FROM products
     JOIN categories ON products.category_id = categories.id
-  `).all();
+  `,
+    )
+    .all();
 }
 
 function getProductsByCategory(id) {
@@ -14,5 +22,6 @@ function getProductsByCategory(id) {
 
 module.exports = {
   getAllProducts,
+  getProductsSearch,
   getProductsByCategory,
 };
