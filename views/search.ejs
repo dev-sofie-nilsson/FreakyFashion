@@ -12,7 +12,7 @@
     <main>
       <% if (searchQuery) { %>
       <h1 class="mb-5 text-center text-4xl font-bold">
-        Hittade <%= products.length %> produkter
+        Hittade <%= products.length %> <%= products.length === 1 ? "produkt" : "produkter" %>
       </h1>
       <%- include("partials/product-grid.ejs", { products }) %> <% } %>
     </main>
