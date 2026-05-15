@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS categories (
 CREATE TABLE IF NOT EXISTS products (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   title TEXT NOT NULL,
+  slug TEXT NOT NULL,
   details TEXT NOT NULL,
   image_path TEXT NOT NULL,
   brand TEXT NOT NULL,
@@ -28,6 +29,7 @@ VALUES
 INSERT INTO
   products (
     title,
+    slug,
     details,
     image_path,
     brand,
@@ -39,16 +41,17 @@ INSERT INTO
 VALUES
   (
     "Orange t-shirt",
+    "orange-tshirt",
     "Detta är en orange tröja",
     "/images/orange-t-shirt.png",
     "Microslop",
     "ABC1234",
     199,
-    "orange-tshirt",
     1
   ),
   (
     "Vit t-shirt",
+    "vit-tshirt",
     "Detta är inte en orange tröja",
     "/images/white-t-shirt.png",
     "Microslop",
@@ -59,6 +62,7 @@ VALUES
   ),
   (
     "Svart t-shirt",
+    "svart-tshirt",
     "Detta är en svart tröja",
     "/images/ChatGPT_Image_22_apr._2026_09_28_38.png",
     "Chattis",
@@ -69,6 +73,7 @@ VALUES
   ),
   (
     "Rostiga dojjor",
+    "rostiga-dojjor",
     "Riktigt fula skor",
     "/images/ugly-shoes.png",
     "Rusty",
@@ -79,6 +84,7 @@ VALUES
   ),
   (
     "Gigantisk ring",
+    "gigantisk-ring",
     "Detta är en otroligt stor ring",
     "/images/massive-ring.png",
     "Ringy",
@@ -89,6 +95,7 @@ VALUES
   ),
   (
     "Rostiga stövlar",
+    "rostiga-stovlar",
     "Dessa gummistövlar verkar ha rostat",
     "/images/ugly-boots.png",
     "Rusty",
@@ -99,6 +106,7 @@ VALUES
   ),
   (
     "Silver armband",
+    "silver-armband",
     "Vanligt armband gjort utav falskt silver",
     "/images/bracelet.png",
     "Bracy",
@@ -109,6 +117,7 @@ VALUES
   ),
   (
     "Guld halsband",
+    "guld-halsband",
     "Halsband i konstig form",
     "/images/necklace.png",
     "Necky",

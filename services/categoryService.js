@@ -12,13 +12,14 @@ function addNewCategory(name) {
     ä: "a",
     ö: "o",
     " ": "-",
+    "-": "",
   };
 
   let slug = "";
 
   const characters = name.toLowerCase().split("");
   characters.forEach((char) => {
-    if (replaceChar[char]) {
+    if (char in replaceChar) {
       slug += replaceChar[char];
     } else {
       slug += char;

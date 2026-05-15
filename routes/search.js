@@ -10,12 +10,8 @@ router.get("/", (req, res) => {
   const allProducts = productService.getProductsSearch();
 
   const products = searchQuery
-    ? allProducts.filter(
-        (p) =>
-          (p.title &&
-            p.title.toLowerCase().includes(searchQuery.toLowerCase())) ||
-          (p.category_name &&
-            p.category_name.toLowerCase().includes(searchQuery.toLowerCase())),
+    ? allProducts.filter( (p) => (p.title && p.title.toLowerCase().includes(searchQuery.toLowerCase())) ||
+    (p.category_name && p.category_name.toLowerCase().includes(searchQuery.toLowerCase())),
       )
     : [];
 

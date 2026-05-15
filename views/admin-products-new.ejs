@@ -1,12 +1,17 @@
 <h2 class="mb-5 text-3xl font-bold">Ny produkt</h2>
 
-<form action="#" method="post" class="space-y-10">
+<form
+  action="/admin/products/new"
+  method="post"
+  enctype="multipart/form-data"
+  class="space-y-10"
+>
   <!-- Namn input -->
   <div class="form-div">
     <label for="name" class="font-bold">Namn</label>
     <input
       type="text"
-      name="name"
+      name="title"
       id="name"
       placeholder="Ange namn"
       class="input-base max-w-xs"
@@ -71,9 +76,9 @@
     <label for="category" class="font-bold">Kategori</label>
     <select name="category" id="category" class="input-base max-w-lg">
       <option value="" disabled selected hidden>Välj kategori</option>
-      <option value="kläder">Kläder</option>
-      <option value="accessoarer">Accessoarer</option>
-      <option value="skor">Skor</option>
+      <% categories.forEach(category => { %>
+      <option value="<%= category.id %>"><%= category.name %></option>
+      <% }) %>
     </select>
   </div>
 
