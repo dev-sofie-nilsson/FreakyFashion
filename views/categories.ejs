@@ -9,10 +9,11 @@
   <body class="flex min-h-screen flex-col">
     <%- include("partials/header.ejs") %>
     <main>
-      <% categories.forEach(category => { %> <% if (category.slug ===
-      categoryName) { %>
+      <% categories.forEach(category => { %> <% if (category.slug === categoryName) { %>
       <h1 class="text-center text-4xl font-bold"><%= category.name %></h1>
-      <% } %> <% }) %> <%- include("partials/product-grid.ejs", { products }) %>
+      <% } %>
+      <% }) %>
+      <%- include("partials/product-grid.ejs", { products }) %>
     </main>
     <%- include("partials/footer.ejs") %>
   </body>
