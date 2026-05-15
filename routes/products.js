@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
 router.get("/:slug", (req, res) => {
   const categories = categoryService.getAllCategories();
   const product = productService.getProductBySlug(req.params.slug);
-  const similarProducts = productService.getProductsByCategory(product.category_id);
+  const similarProducts = productService.getProductsByCategorySlug(product.category_slug);
   res.render("product-details", {
     title: product.title,
     categories,

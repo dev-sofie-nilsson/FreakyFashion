@@ -43,8 +43,14 @@ function getProductsByCategorySlug(slug) {
 }
 
 function getProductBySlug(slug) {
-  return db.prepare("SELECT products.*, categories.name AS category_name FROM products JOIN categories ON products.category_id = categories.id WHERE products.slug = ?").get(slug);
+  return db.prepare(`
+    SELECT products.*, categories.name AS category_name, categories.slug AS category_slug
+    FROM products
+    JOIN categories ON products.category_id = categories.id
+    WHERE products.slug = ?
+  `).get(slug);
 }
+
 module.exports = {
   getAllProducts,
   getProductsSearch,
