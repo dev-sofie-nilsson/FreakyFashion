@@ -16,11 +16,24 @@ function getProductsSearch() {
     .all();
 }
 
-function getProductsByCategory(slug) {
+function getProductsByCategory(id) {
   return db
     .prepare(
       `
     SELECT *
+    FROM products
+    INNER JOIN categories ON products.category_id = categories.id
+    WHERE categories.id = ?
+    `,
+    )
+    .all(id);
+}
+
+function getProductsByCategorySlug(slug) {
+  return db
+    .prepare(
+      `
+    SELECT products.*, categories.name AS category_name
     FROM products
     INNER JOIN categories ON products.category_id = categories.id
     WHERE categories.slug = ?
@@ -36,5 +49,6 @@ module.exports = {
   getAllProducts,
   getProductsSearch,
   getProductsByCategory,
+  getProductsByCategorySlug,
   getProductBySlug,
 };

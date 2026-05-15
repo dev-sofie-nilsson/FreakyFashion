@@ -47,10 +47,9 @@
       <div
         class="mt-4 hidden grid-cols-3 gap-3 p-4 sm:grid lg:mx-auto lg:max-w-[2300px]"
       >
-        <!-- TODO: Temporary fix, make actual logic -->
-        <%-include("partials/product-card.ejs", {product: products[0]})%>
-        <%-include("partials/product-card.ejs", {product: products[1]})%>
-        <%-include("partials/product-card.ejs", {product: products[2]})%>
+        <% products.forEach(function(p) { %>
+        <%- include("partials/product-card.ejs", {product: p}) %>
+        <% }) %>
       </div>
       <%- include("partials/footer.ejs") %>
     </main>
