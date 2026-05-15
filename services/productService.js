@@ -29,8 +29,48 @@ function getProductsByCategory(slug) {
     .all(slug);
 }
 
+function addNewProduct(
+  title,
+  details,
+  image_path,
+  brand,
+  sku,
+  price,
+  category_id,
+) {
+  // Create slug from title
+  const replaceChar = {
+    å: "a",
+    ä: "a",
+    ö: "o",
+    " ": "-",
+    "-": "",
+  };
+
+  let slug = "";
+
+  const characters = title.toLowerCase().split("");
+  characters.forEach((char) => {
+    if (char in replaceChar) {
+      slug += replaceChar[char];
+    } else {
+      slug += char;
+    }
+  });
+
+  // Add new product
+  return db
+    .prepare(
+      `
+    INSERT INTO products (title, slug, details, image_path, brand, sku, price, category_id)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ? ) `,
+    )
+    .run(title, slug, details, image_path, brand, sku, price, category_id);
+}
+
 module.exports = {
   getAllProducts,
   getProductsSearch,
   getProductsByCategory,
+  addNewProduct,
 };
