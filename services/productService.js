@@ -16,11 +16,24 @@ function getProductsSearch() {
     .all();
 }
 
-function getProductsByCategory(slug) {
+function getProductsByCategory(id) {
   return db
     .prepare(
       `
     SELECT *
+    FROM products
+    INNER JOIN categories ON products.category_id = categories.id
+    WHERE categories.id = ?
+    `,
+    )
+    .all(id);
+}
+
+function getProductsByCategorySlug(slug) {
+  return db
+    .prepare(
+      `
+    SELECT products.*, categories.name AS category_name
     FROM products
     INNER JOIN categories ON products.category_id = categories.id
     WHERE categories.slug = ?
@@ -68,9 +81,20 @@ function addNewProduct(
     .run(title, slug, details, image_path, brand, sku, price, category_id);
 }
 
+function getProductBySlug(slug) {
+  return db.prepare(`
+    SELECT products.*, categories.name AS category_name, categories.slug AS category_slug
+    FROM products
+    JOIN categories ON products.category_id = categories.id
+    WHERE products.slug = ?
+  `).get(slug);
+}
+
 module.exports = {
   getAllProducts,
   getProductsSearch,
   getProductsByCategory,
+  getProductsByCategorySlug,
+  getProductBySlug,
   addNewProduct,
 };
