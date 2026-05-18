@@ -21,7 +21,6 @@ router.get("/:slug", (req, res) => {
   const similarProducts = productService
     .getProductsByCategory(productDetails.category_id)
     .filter((prod) => productDetails.id !== prod.id);
-  console.log("Similar products after filter: ", similarProducts)
   res.render("product-details", {
     title: "Product details",
     categories,
