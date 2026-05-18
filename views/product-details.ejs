@@ -16,8 +16,8 @@
           class="relative aspect-4/5 rounded-md border sm:w-1/2 lg:max-w-2xl"
         >
           <img
-            src="<%= product.image_path %>"
-            alt="<%= product.title %>"
+            src="<%= productDetails.image_path %>"
+            alt="Svart T-shirt"
             class="size-full object-contain"
           />
           <img
@@ -28,12 +28,16 @@
         </div>
         <!-- Container with product info -->
         <div class="space-y-4 p-4 font-semibold italic sm:w-1/2 lg:max-w-2/5">
-          <h3 class="text-2xl font-normal"><%= product.title %></h3>
-          <p class="font-normal"><%= product.brand %></p>
+          <h3 class="text-2xl font-normal">Svart T-shirt</h3>
+          <p class="font-normal">Levi's</p>
 
-          <p class=""><%= product.details %></p>
+          <p class="">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
+            expedita rerum, perferendis natus ad quo a doloremque incidunt
+            eveniet ipsa assumenda delectus praesentium aliquid, inventore ullam
+            dolores voluptatum voluptas cumque.
           </p>
-          <p class=""><%= product.price %> SEK</p>
+          <p class="">199 SEK</p>
           <button
             class="w-full rounded-md border p-4 font-bold not-italic sm:w-auto"
           >
@@ -47,8 +51,8 @@
       <div
         class="mt-4 hidden grid-cols-3 gap-3 p-4 sm:grid lg:mx-auto lg:max-w-[2300px]"
       >
-        <% products.forEach(function(p) { %>
-        <%- include("partials/product-card.ejs", {product: p}) %>
+        <% similarProducts.forEach(prod => { %>
+          <%-include("partials/product-card.ejs", {product: prod})%>
         <% }) %>
       </div>
       <%- include("partials/footer.ejs") %>
