@@ -20,7 +20,7 @@ function getProductsByCategorySlug(slug) {
   return db
     .prepare(
       `
-    SELECT *
+    SELECT products.* 
     FROM products
     INNER JOIN categories ON products.category_id = categories.id
     WHERE categories.slug = ?
