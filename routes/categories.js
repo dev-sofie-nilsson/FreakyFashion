@@ -3,16 +3,16 @@ const router = express.Router();
 const productService = require("../services/productService");
 const categoryService = require("../services/categoryService");
 
-router.get("/:categoryName", (req, res) => {
-  const categoryName = req.params.categoryName;
+router.get("/:slug", (req, res) => {
+  const categorySlug = req.params.slug;
   const categories = categoryService.getAllCategories();
-  const products = productService.getProductsByCategorySlug(categoryName);
+  const products = productService.getProductsByCategorySlug(categorySlug);
 
   res.render("categories", {
     title: "Categories",
     products,
     categories,
-    categoryName,
+    categorySlug,
   });
 });
 
