@@ -9,6 +9,8 @@ router.get('/', async (req, res, next) => {
     const categories = await categoryService.getAllCategories();
     const products = await productService.getAllProducts();
     const hero = await heroService.getHero();
+
+    console.log("Hero returns: ", hero)
     
     res.render('index', {
       title: 'Home',
