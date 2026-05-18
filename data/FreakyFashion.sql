@@ -1,3 +1,4 @@
+-- Tables
 CREATE TABLE IF NOT EXISTS categories (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL UNIQUE,
@@ -17,6 +18,13 @@ CREATE TABLE IF NOT EXISTS products (
   FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE RESTRICT
 );
 
+CREATE TABLE hero (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT NOT NULL,
+  description TEXT NOT NULL,
+  image TEXT NOT NULL
+);
+
 -- TEST DATA
 INSERT INTO
   categories (name, slug)
@@ -24,6 +32,14 @@ VALUES
   ("Kläder", "klader"),
   ("Skor", "skor"),
   ("Accessoarer", "accessoarer");
+
+
+INSERT INTO
+  hero (title, description, image)
+VALUES
+  ("Mode som slår hårt – precis som din stil!", 
+  "Vare sig du letar efter kläder som får folk att vända sig om, smycken som glittrar starkare än dina framtidsplaner eller skor som klarar både catwalk och vardagskaos – vi har det du behöver. Välkommen till mode på dina villkor!", 
+  "/images/hero.png");
 
 INSERT INTO
   products (
