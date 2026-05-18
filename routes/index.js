@@ -9,10 +9,17 @@ router.get('/', async (req, res, next) => {
     const categories = await categoryService.getAllCategories();
     const products = await productService.getAllProducts();
 
+const hero = {
+  title: "Mode som slår hårt – precis som din stil!",
+  description: "Vare sig du letar efter kläder som får folk att vända sig om, smycken som glittrar starkare än dina framtidsplaner eller skor som klarar både catwalk och vardagskaos – vi har det du behöver. Välkommen till mode på dina villkor!",
+  image: "/images/hero.png"
+};
+    
     res.render('index', {
       title: 'Home',
       categories: categories,
-      products: products
+      products: products,
+      hero: hero
     });
 
   } catch (error) {
