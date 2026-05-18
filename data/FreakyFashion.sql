@@ -13,7 +13,6 @@ CREATE TABLE IF NOT EXISTS products (
   brand TEXT NOT NULL,
   sku TEXT NOT NULL UNIQUE,
   price INTEGER NOT NULL CHECK (price >= 0),
-  slug TEXT NOT NULL UNIQUE,
   category_id INTEGER NOT NULL,
   FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE RESTRICT
 );
@@ -35,7 +34,6 @@ INSERT INTO
     brand,
     sku,
     price,
-    slug,
     category_id
   )
 VALUES
@@ -57,7 +55,6 @@ VALUES
     "Microslop",
     "AB234",
     199,
-    "vit-tshirt",
     1
   ),
   (
@@ -68,7 +65,6 @@ VALUES
     "Chattis",
     "ABC34",
     300,
-    "svart-tshirt",
     1
   ),
   (
@@ -79,7 +75,6 @@ VALUES
     "Rusty",
     "CBA34",
     310,
-    "rostiga-dojjor",
     2
   ),
   (
@@ -90,7 +85,6 @@ VALUES
     "Ringy",
     "RNG001",
     299,
-    "gigantisk-ring",
     3
   ),
   (
@@ -101,7 +95,6 @@ VALUES
     "Rusty",
     "RST001",
     349,
-    "rostiga-stovlar",
     2
   ),
   (
@@ -112,7 +105,6 @@ VALUES
     "Bracy",
     "BRC001",
     199,
-    "silver-armband",
     3
   ),
   (
@@ -123,6 +115,5 @@ VALUES
     "Necky",
     "NCK001",
     249,
-    "guld-halsband",
     3
   );
