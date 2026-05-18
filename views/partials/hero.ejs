@@ -1,11 +1,11 @@
-<section class="m-4 flex flex-col rounded-md p-4 border lg:flex-row-reverse">
+<section class="m-4 flex gap-4 flex-col rounded-md p-4 border lg:flex-row-reverse">
   <img
     src="<%= hero.image %>"
     alt="picture"
-    class="w-full h-auto rounded-md lg:w-2/3"
+    class="w-full h-auto rounded-md lg:w-2/3 lg:max-w-6xl"
   />
   <div class="p-2 text-center">
     <h1 class="my-2 font-bold text-4xl"><%= hero.title %></h1>
-    <p class="text-gray-600"><%= hero.description %></p>
+    <p class="text-gray-600 text-2xl"><%= hero.description %></p>
   </div>
 </section>
