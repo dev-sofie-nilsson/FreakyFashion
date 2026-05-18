@@ -28,16 +28,11 @@
         </div>
         <!-- Container with product info -->
         <div class="space-y-4 p-4 font-semibold italic sm:w-1/2 lg:max-w-2/5">
-          <h3 class="text-2xl font-normal">Svart T-shirt</h3>
-          <p class="font-normal">Levi's</p>
+          <h3 class="text-2xl font-normal"><%= productDetails.title %></h3>
+          <p class="font-normal"><%= productDetails.brand %></p>
 
-          <p class="">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-            expedita rerum, perferendis natus ad quo a doloremque incidunt
-            eveniet ipsa assumenda delectus praesentium aliquid, inventore ullam
-            dolores voluptatum voluptas cumque.
-          </p>
-          <p class="">199 SEK</p>
+          <p><%= productDetails.details %></p>
+          <p><%= productDetails.price %>SEK</p>
           <button
             class="w-full rounded-md border p-4 font-bold not-italic sm:w-auto"
           >
