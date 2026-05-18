@@ -4,18 +4,25 @@
       <img
         src="\images\freakyfashion-logo.png"
         alt="Freaky Fashion Logo"
-        class="w-full h-auto"
+        class="h-auto w-full"
       />
     </a>
     <!-- Search container -->
     <div class="relative min-w-1/2 grow gap-2 sm:grow-0">
-      <form class="w-full sm:max-w-md" role="search" aria-label="Sök produkter" method="GET" action="/search">
+      <form
+        class="w-full sm:max-w-md"
+        role="search"
+        aria-label="Sök produkter"
+        method="GET"
+        action="/search"
+      >
         <input
           type="search"
           name="q"
           class="h-10 w-full rounded-lg border border-black p-2 pl-10 text-base"
           placeholder="Sök produkt"
           aria-label="Sök produkt"
+          autofocus
         />
       </form>
       <img
