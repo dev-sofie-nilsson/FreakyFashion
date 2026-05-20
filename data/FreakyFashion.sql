@@ -18,11 +18,17 @@ CREATE TABLE IF NOT EXISTS products (
   FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE RESTRICT
 );
 
-CREATE TABLE hero (
+CREATE TABLE IF NOT EXISTS hero (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   title TEXT NOT NULL,
   description TEXT NOT NULL,
   image TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS spots (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT NOT NULL,
+  image_path TEXT NOT NULL
 );
 
 -- TEST DATA
@@ -33,13 +39,21 @@ VALUES
   ("Skor", "skor"),
   ("Accessoarer", "accessoarer");
 
-
 INSERT INTO
   hero (title, description, image)
 VALUES
-  ("Mode som slår hårt – precis som din stil!", 
-  "Vare sig du letar efter kläder som får folk att vända sig om, smycken som glittrar starkare än dina framtidsplaner eller skor som klarar både catwalk och vardagskaos – vi har det du behöver. Välkommen till mode på dina villkor!", 
-  "/images/hero.png");
+  (
+    "Mode som slår hårt – precis som din stil!",
+    "Vare sig du letar efter kläder som får folk att vända sig om, smycken som glittrar starkare än dina framtidsplaner eller skor som klarar både catwalk och vardagskaos – vi har det du behöver. Välkommen till mode på dina villkor!",
+    "/images/hero.png"
+  );
+
+INSERT INTO
+  spots (title, image_path)
+VALUES
+  ("NYHETER", "/images/nyheter_spot.png"),
+  ("BÄST SÄLJARE", "/images/popular_spot.png"),
+  ("REA", "/images/sales_spot.png");
 
 INSERT INTO
   products (
