@@ -85,6 +85,24 @@ router.post("/categories/new", (req, res) => {
     });
   }
 
+  try {
+    categoryService.addNewCategory(newCategory);
+    res.redirect("/admin/categories");
+  } catch (error) {
+    if (error.message.includes("UNIQUE constraint failed")) {
+    return res.status(400).render("admin-categories-new", {
+      title: "Administration",
+      layout: "layouts/admin-layout",
+      error: "Kategorin finns redan.",
+    });
+  }
+  return res.status(500).render("admin-categories-new", {
+    title: "Administration",
+    layout: "layouts/admin-layout",
+    error: "Ett fel inträffade. Försök igen senare.",
+  });
+  }
+
   categoryService.addNewCategory(newCategory);
   res.redirect("/admin/categories");
 });
