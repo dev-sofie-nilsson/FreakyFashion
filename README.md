@@ -53,6 +53,8 @@ _NOTE: `<>` is a placeholder; replace with actual branch name_
 
 `git checkout main`
 
+`git fetch origin`
+
 `git status`
 
 #### If main has been updated, merge to your branch
