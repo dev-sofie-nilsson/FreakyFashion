@@ -73,6 +73,40 @@ router.get("/categories/new", (req, res) => {
 
 router.post("/categories/new", (req, res) => {
   const newCategory = req.body.namn;
+  if (!newCategory || newCategory.trim().length === 0) {
+    return res.status(400).render("admin-categories-new", {
+      title: "Administration",
+      layout: "layouts/admin-layout",
+      error: "Namnet får inte vara tomt.",
+    });
+  }
+
+  if (newCategory.length > 25) {
+    return res.status(400).render("admin-categories-new", {
+      title: "Administration",
+      layout: "layouts/admin-layout",
+      error: "Namnet får max vara 25 tecken.",
+    });
+  }
+
+  try {
+    categoryService.addNewCategory(newCategory);
+    res.redirect("/admin/categories");
+  } catch (error) {
+    if (error.message.includes("UNIQUE constraint failed")) {
+    return res.status(400).render("admin-categories-new", {
+      title: "Administration",
+      layout: "layouts/admin-layout",
+      error: "Kategorin finns redan.",
+    });
+  }
+  return res.status(500).render("admin-categories-new", {
+    title: "Administration",
+    layout: "layouts/admin-layout",
+    error: "Ett fel inträffade. Försök igen senare.",
+  });
+  }
+
   categoryService.addNewCategory(newCategory);
   res.redirect("/admin/categories");
 });
