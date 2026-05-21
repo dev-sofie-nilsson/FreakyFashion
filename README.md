@@ -61,7 +61,7 @@ _NOTE: `<>` is a placeholder; replace with actual branch name_
 
 `git checkout <branch-name>`
 
-`git merge main`
+`git merge main "<message>"`
 
 `git add -A`
 
