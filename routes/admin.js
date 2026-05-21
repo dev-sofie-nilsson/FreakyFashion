@@ -32,6 +32,7 @@ router.get("/products/new", (req, res) => {
     activePage: "products",
   });
 });
+
 // upload.single("image") processes the uploaded image file before the route runs
 router.post("/products/new", upload.single("image"), (req, res) => {
   const imagePath = `/images/${req.file.originalname}`;
