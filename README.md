@@ -51,17 +51,17 @@ _NOTE: `<>` is a placeholder; replace with actual branch name_
 
 `git commit -m "<message>"`
 
+`git checkout main`
+
 `git status`
 
 #### If main has been updated, merge to your branch
-
-`git checkout main`
 
 `git pull`
 
 `git checkout <branch-name>`
 
-`git merge main`
+`git merge main "<message>"`
 
 `git add -A`
 
