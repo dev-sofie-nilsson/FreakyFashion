@@ -10,8 +10,8 @@ router.get("/", async (req, res, next) => {
   try {
     const categories = await categoryService.getAllCategories();
     const products = await productService.getAllProducts();
-    const hero = await heroService.getHero();   // Hero banner at the top of the page
-    const spots = await spotsService.getAllSpots();   // Hero banner at the top of the page
+    const hero = await heroService.getHero();
+    const spots = await spotsService.getAllSpots();
 
     res.render("index", {
       title: "Home",

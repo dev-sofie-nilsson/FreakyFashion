@@ -3,7 +3,7 @@ const router = express.Router();
 const productService = require("../services/productService");
 const categoryService = require("../services/categoryService");
 
-// e.g. /categories/jackets — "jackets" is the slug
+//category name "Kläder" becomes "klader" as a slug. /categories/klader
 router.get("/:slug", (req, res) => {
   const categorySlug = req.params.slug;
   const categories = categoryService.getAllCategories();
