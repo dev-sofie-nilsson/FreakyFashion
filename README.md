@@ -45,13 +45,31 @@ _NOTE: `<>` is a placeholder; replace with actual branch name_
 
 ### What to do when you're done working in your branch
 
-1. `git add -A`
+#### Save your latest changes:
 
-2. `git commit -m "<message>"`
+`git add -A`
 
-3. `git push`
+`git commit -m "<message>"`
 
-4. Open PR on GitHub
+`git checkout main`
+
+#### If main has been updated, merge to your branch
+
+`git pull`
+
+`git checkout <branch-name>`
+
+`git merge main -m "<message>"`
+
+`git add -A`
+
+`git commit -m "<message>"`
+
+#### Continue here if main hasn't been updated
+
+`git push`
+
+_**Open PR on GitHub**_
 
 ### Cleanup **_after_** PR has been merged
 

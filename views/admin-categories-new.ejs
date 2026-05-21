@@ -9,10 +9,17 @@
         id="namn" 
         name="namn"
         type="text" 
+        maxlength="25"
         placeholder="Ange namn" 
         class="border-2 rounded-md px-2 py-1 w-68"
       >
     </div>
+
+    <% if (locals.error) { %>
+      <p class="text-red-500 text-sm mt-1">
+        <%= error %>
+      </p>
+    <% } %>
 
     <button class="button mt-4 py-2 font-semibold">
       Lägg till
