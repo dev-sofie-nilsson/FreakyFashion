@@ -8,13 +8,14 @@ router.get("/", (req, res) => {
   res.render("admin", { title: "admin" });
 });
 
-router.get("/categories", (req, res) => {
+router.get("/products", (req, res) => {
   try {
-    const categories = categoryService.getAllCategories();
-    res.render("admin-categories", {
+    const products = productService.getAllProducts();
+    res.render("admin-products", {
       title: "Administration",
       layout: "layouts/admin-layout",
-      categories,
+      products,
+      activePage: "products",
     });
   } catch (error) {
     console.error(error);
@@ -28,6 +29,7 @@ router.get("/products/new", (req, res) => {
     title: "Administration",
     layout: "layouts/admin-layout",
     categories,
+    activePage: "products",
   });
 });
 
@@ -43,16 +45,17 @@ router.post("/products/new", upload.single("image"), (req, res) => {
     parseInt(req.body.price),
     parseInt(req.body.category),
   );
-  res.redirect("/admin/products")
+  res.redirect("/admin/products");
 });
 
-router.get("/products", (req, res) => {
+router.get("/categories", (req, res) => {
   try {
-    const products = productService.getAllProducts();
-    res.render("admin-products", {
+    const categories = categoryService.getAllCategories();
+    res.render("admin-categories", {
       title: "Administration",
       layout: "layouts/admin-layout",
-      products,
+      categories,
+      activePage: "categories",
     });
   } catch (error) {
     console.error(error);
@@ -64,6 +67,7 @@ router.get("/categories/new", (req, res) => {
   res.render("admin-categories-new", {
     title: "Administration",
     layout: "layouts/admin-layout",
+    activePage: "categories",
   });
 });
 
