@@ -34,6 +34,7 @@ router.get("/products/new", (req, res) => {
   });
 });
 
+// upload.single("image") processes the uploaded image file before the route runs
 router.post("/products/new", upload.single("image"), (req, res) => {
   const imagePath = `/images/${req.file.originalname}`;
 
@@ -43,8 +44,8 @@ router.post("/products/new", upload.single("image"), (req, res) => {
     imagePath,
     req.body.brand,
     req.body.sku,
-    parseInt(req.body.price),
-    parseInt(req.body.category),
+    parseInt(req.body.price),  // Converts price from string to integer
+    parseInt(req.body.category),  // Converts category ID from string to integer
   );
   res.redirect("/admin/products");
 });

@@ -5,6 +5,7 @@ const productService = require("../services/productService");
 const heroService = require("../services/heroService");
 const spotsService = require("../services/spotsService");
 
+// async/await is used because the services make asynchronous database calls
 router.get("/", async (req, res, next) => {
   try {
     const categories = await categoryService.getAllCategories();
