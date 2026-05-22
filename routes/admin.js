@@ -3,6 +3,7 @@ const router = express.Router();
 const productService = require("../services/productService");
 const categoryService = require("../services/categoryService");
 const upload = require("../middleware/upload");
+const validateLength = require("../middleware/validateLength");
 
 router.get("/", (req, res) => {
   res.render("admin", { title: "admin" });
@@ -72,21 +73,19 @@ router.get("/categories/new", (req, res) => {
   });
 });
 
-router.post("/categories/new", (req, res) => {
-  const newCategory = req.body.namn;
+router.post("/categories/new", validateLength("admin-categories-new", {
+  title: "Administration",
+  layout: "layouts/admin-layout",
+  activePage: "categories",
+}), (req, res) => {
+  const newCategory = req.body.input;
+
   if (!newCategory || newCategory.trim().length === 0) {
     return res.status(400).render("admin-categories-new", {
       title: "Administration",
       layout: "layouts/admin-layout",
+      activePage: "categories",
       error: "Namnet får inte vara tomt.",
-    });
-  }
-
-  if (newCategory.length > 25) {
-    return res.status(400).render("admin-categories-new", {
-      title: "Administration",
-      layout: "layouts/admin-layout",
-      error: "Namnet får max vara 25 tecken.",
     });
   }
 
@@ -95,21 +94,20 @@ router.post("/categories/new", (req, res) => {
     res.redirect("/admin/categories");
   } catch (error) {
     if (error.message.includes("UNIQUE constraint failed")) {
-    return res.status(400).render("admin-categories-new", {
+      return res.status(400).render("admin-categories-new", {
+        title: "Administration",
+        layout: "layouts/admin-layout",
+        activePage: "categories",
+        error: "Kategorin finns redan.",
+      });
+    }
+    return res.status(500).render("admin-categories-new", {
       title: "Administration",
       layout: "layouts/admin-layout",
-      error: "Kategorin finns redan.",
+      activePage: "categories",
+      error: "Ett fel inträffade. Försök igen senare.",
     });
   }
-  return res.status(500).render("admin-categories-new", {
-    title: "Administration",
-    layout: "layouts/admin-layout",
-    error: "Ett fel inträffade. Försök igen senare.",
-  });
-  }
-
-  categoryService.addNewCategory(newCategory);
-  res.redirect("/admin/categories");
 });
 
 module.exports = router;
