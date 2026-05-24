@@ -9,7 +9,6 @@
 
 - EJS language support
 - SQLite3 Editor
-- Prettier
 
 ### Clone project and install dependencies
 

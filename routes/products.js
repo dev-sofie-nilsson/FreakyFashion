@@ -14,9 +14,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:slug", (req, res) => {
-  // TODO: Remove getAllProducts()?
   const categories = categoryService.getAllCategories();
-  const products = productService.getAllProducts();
   const productDetails = productService.getProductBySlug(req.params.slug);
   const similarProducts = productService
     .getProductsByCategory(productDetails.category_id)
@@ -24,7 +22,6 @@ router.get("/:slug", (req, res) => {
   res.render("product-details", {
     title: "Product details",
     categories,
-    products,
     productDetails,
     similarProducts,
   });
