@@ -52,7 +52,7 @@ INSERT INTO
   spots (title, image_path)
 VALUES
   ("NYHETER", "/images/nyheter_spot.png"),
-  ("BÄST SÄLJARE", "/images/popular_spot.png"),
+  ("BÄSTSÄLJARE", "/images/popular_spot.png"),
   ("REA", "/images/sales_spot.png");
 
 INSERT INTO
