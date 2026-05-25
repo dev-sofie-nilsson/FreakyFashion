@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/stylesheets/styles.css" />
-    <title><% title %></title>
-  </head>
-  <body class="flex min-h-screen flex-col">
-    <%- include("partials/header.ejs") %>
-    <main>
-      <!-- prettier-ignore-start -->
-      <% categories.forEach(category => { %>
+<% categories.forEach(category => { %>
         <% if (category.slug === categorySlug) { %>
           <h1 class="text-center text-4xl font-bold"><%= category.name %></h1>
         <% } %>
       <% }) %>
-      <!-- prettier-ignore-end -->
+      
       <%- include("partials/product-grid.ejs", { products }) %>
-    </main>
-    <%- include("partials/footer.ejs") %>
-  </body>
-</html>
