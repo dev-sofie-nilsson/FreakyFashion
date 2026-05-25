@@ -18,6 +18,7 @@ router.get("/", (req, res) => {
     : [];  // Returns an empty array if no search query is provided
 
   res.render("search", {
+    title: `Sökresultat för "${searchQuery}"`, // Page title with search query
     searchQuery,
     categories,
     products,
