@@ -3,7 +3,7 @@ const router = express.Router();
 const productService = require("../services/productService");
 const categoryService = require("../services/categoryService");
 const upload = require("../middleware/upload");
-const validateLength = require("../middleware/validateLength");
+const validateInput = require("../middleware/validateInput");
 
 router.get("/", (req, res) => {
   res.render("admin", { title: "admin" });
@@ -35,20 +35,40 @@ router.get("/products/new", (req, res) => {
 });
 
 // upload.single("image") processes the uploaded image file before the route runs
-router.post("/products/new", upload.single("image"), (req, res) => {
-  const imagePath = `/images/${req.file.originalname}`;
+router.post(
+  "/products/new",
+  upload.single("image"),
+  validateInput,
+  (req, res) => {
+    const categories = categoryService.getAllCategories();
+    const nameError = req.nameError;
+    const fileError = !req.file ? "Måste välja en fil." : null;
 
-  productService.addNewProduct(
-    req.body.title,
-    req.body.description,
-    imagePath,
-    req.body.brand,
-    req.body.sku,
-    parseInt(req.body.price),  // Converts price from string to integer
-    parseInt(req.body.category),  // Converts category ID from string to integer
-  );
-  res.redirect("/admin/products");
-});
+    if (nameError || fileError) {
+      return res.status(400).render("admin-products-new", {
+        title: "Administration",
+        layout: "layouts/admin-layout",
+        categories,
+        activePage: "products",
+        nameError,
+        fileError,
+      });
+    }
+
+    const imagePath = `/images/${req.file.originalname}`;
+
+    productService.addNewProduct(
+      req.body.name,
+      req.body.description,
+      imagePath,
+      req.body.brand,
+      req.body.sku,
+      parseInt(req.body.price), // Converts price from string to integer
+      parseInt(req.body.category), // Converts category ID from string to integer
+    );
+    res.redirect("/admin/products");
+  },
+);
 
 router.get("/categories", (req, res) => {
   try {
@@ -73,41 +93,19 @@ router.get("/categories/new", (req, res) => {
   });
 });
 
-router.post("/categories/new", validateLength("admin-categories-new", {
-  title: "Administration",
-  layout: "layouts/admin-layout",
-  activePage: "categories",
-}), (req, res) => {
-  const newCategory = req.body.input;
-
-  if (!newCategory || newCategory.trim().length === 0) {
+router.post("/categories/new", validateInput, (req, res) => {
+  if (req.nameError) {
     return res.status(400).render("admin-categories-new", {
       title: "Administration",
       layout: "layouts/admin-layout",
       activePage: "categories",
-      error: "Namnet får inte vara tomt.",
+      nameError: req.nameError,
     });
   }
 
-  try {
-    categoryService.addNewCategory(newCategory);
-    res.redirect("/admin/categories");
-  } catch (error) {
-    if (error.message.includes("UNIQUE constraint failed")) {
-      return res.status(400).render("admin-categories-new", {
-        title: "Administration",
-        layout: "layouts/admin-layout",
-        activePage: "categories",
-        error: "Kategorin finns redan.",
-      });
-    }
-    return res.status(500).render("admin-categories-new", {
-      title: "Administration",
-      layout: "layouts/admin-layout",
-      activePage: "categories",
-      error: "Ett fel inträffade. Försök igen senare.",
-    });
-  }
+  const newCategory = req.body.name;
+  categoryService.addNewCategory(newCategory);
+  res.redirect("/admin/categories");
 });
 
 module.exports = router;
