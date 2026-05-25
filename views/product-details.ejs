@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/styles.css" />
-  </head>
-
-  <body class="flex min-h-screen flex-col">
-    <main>
-      <%- include("partials/header.ejs") %>
-      <div class="p-4 sm:flex sm:flex-row sm:gap-4">
+    <div class="p-4 sm:flex sm:flex-row sm:gap-4">
         <!-- Container with product img + icon -->
         <div
           class="relative aspect-4/5 rounded-md border sm:w-1/2 lg:max-w-2xl"
@@ -51,7 +39,3 @@
           <%-include("partials/product-card.ejs", {product: prod})%>
         <% }) %>
       </div>
-      <%- include("partials/footer.ejs") %>
-    </main>
-  </body>
-</html>
