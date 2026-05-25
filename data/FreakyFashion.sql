@@ -35,25 +35,25 @@ CREATE TABLE IF NOT EXISTS spots (
 INSERT INTO
   categories (name, slug)
 VALUES
-  ("Kläder", "klader"),
-  ("Skor", "skor"),
-  ("Accessoarer", "accessoarer");
+  ('Kläder', 'klader'),
+  ('Skor', 'skor'),
+  ('Accessoarer', 'accessoarer');
 
 INSERT INTO
   hero (title, description, image)
 VALUES
   (
-    "Mode som slår hårt – precis som din stil!",
-    "Vare sig du letar efter kläder som får folk att vända sig om, smycken som glittrar starkare än dina framtidsplaner eller skor som klarar både catwalk och vardagskaos – vi har det du behöver. Välkommen till mode på dina villkor!",
-    "/images/hero.png"
+    'Mode som slår hårt – precis som din stil!',
+    'Vare sig du letar efter kläder som får folk att vända sig om, smycken som glittrar starkare än dina framtidsplaner eller skor som klarar både catwalk och vardagskaos – vi har det du behöver. Välkommen till mode på dina villkor!',
+    '/images/hero.png'
   );
 
 INSERT INTO
   spots (title, image_path)
 VALUES
-  ("NYHETER", "/images/nyheter_spot.png"),
-  ("BÄST SÄLJARE", "/images/popular_spot.png"),
-  ("REA", "/images/sales_spot.png");
+  ('NYHETER', '/images/nyheter_spot.png'),
+  ('BÄSTSÄLJARE', '/images/popular_spot.png'),
+  ('REA', '/images/sales_spot.png');
 
 INSERT INTO
   products (
@@ -68,82 +68,82 @@ INSERT INTO
   )
 VALUES
   (
-    "Orange t-shirt",
-    "orange-tshirt",
-    "Detta är en orange tröja",
-    "/images/orange-t-shirt.png",
-    "Microslop",
-    "ABC1234",
+    'Orange t-shirt',
+    'orange-tshirt',
+    'Detta är en orange tröja',
+    '/images/orange-t-shirt.png',
+    'Microslop',
+    'ABC1234',
     199,
     1
   ),
   (
-    "Vit t-shirt",
-    "vit-tshirt",
-    "Detta är inte en orange tröja",
-    "/images/white-t-shirt.png",
-    "Microslop",
-    "AB234",
+    'Vit t-shirt',
+    'vit-tshirt',
+    'Detta är inte en orange tröja',
+    '/images/white-t-shirt.png',
+    'Microslop',
+    'AB234',
     199,
     1
   ),
   (
-    "Svart t-shirt",
-    "svart-tshirt",
-    "Detta är en svart tröja",
-    "/images/ChatGPT_Image_22_apr._2026_09_28_38.png",
-    "Chattis",
-    "ABC34",
+    'Svart t-shirt',
+    'svart-tshirt',
+    'Detta är en svart tröja',
+    '/images/ChatGPT_Image_22_apr._2026_09_28_38.png',
+    'Chattis',
+    'ABC34',
     300,
     1
   ),
   (
-    "Rostiga dojjor",
-    "rostiga-dojjor",
-    "Riktigt fula skor",
-    "/images/ugly-shoes.png",
-    "Rusty",
-    "CBA34",
+    'Rostiga dojjor',
+    'rostiga-dojjor',
+    'Riktigt fula skor',
+    '/images/ugly-shoes.png',
+    'Rusty',
+    'CBA34',
     310,
     2
   ),
   (
-    "Gigantisk ring",
-    "gigantisk-ring",
-    "Detta är en otroligt stor ring",
-    "/images/massive-ring.png",
-    "Ringy",
-    "RNG001",
+    'Gigantisk ring',
+    'gigantisk-ring',
+    'Detta är en otroligt stor ring',
+    '/images/massive-ring.png',
+    'Ringy',
+    'RNG001',
     299,
     3
   ),
   (
-    "Rostiga stövlar",
-    "rostiga-stovlar",
-    "Dessa gummistövlar verkar ha rostat",
-    "/images/ugly-boots.png",
-    "Rusty",
-    "RST001",
+    'Rostiga stövlar',
+    'rostiga-stovlar',
+    'Dessa gummistövlar verkar ha rostat',
+    '/images/ugly-boots.png',
+    'Rusty',
+    'RST001',
     349,
     2
   ),
   (
-    "Silver armband",
-    "silver-armband",
-    "Vanligt armband gjort utav falskt silver",
-    "/images/bracelet.png",
-    "Bracy",
-    "BRC001",
+    'Silver armband',
+    'silver-armband',
+    'Vanligt armband gjort utav falskt silver',
+    '/images/bracelet.png',
+    'Bracy',
+    'BRC001',
     199,
     3
   ),
   (
-    "Guld halsband",
-    "guld-halsband",
-    "Halsband i konstig form",
-    "/images/necklace.png",
-    "Necky",
-    "NCK001",
+    'Guld halsband',
+    'guld-halsband',
+    'Halsband i konstig form',
+    '/images/necklace.png',
+    'Necky',
+    'NCK001',
     249,
     3
   );
