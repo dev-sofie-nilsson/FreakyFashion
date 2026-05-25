@@ -1,16 +1,12 @@
 <section class="hidden gap-8 p-4 lg:grid lg:grid-cols-3" aria-label="Spots">
-  <% spots.forEach(spot => { %>
-  <a href="#" class="relative block">
-    <img
-      src="<%= spot.image_path %>"
-      alt="Spot för <%= spot.title.toLowerCase()%>"
-      class="h-80 w-full rounded-md object-cover"
-    />
-    <span
-      class="absolute inset-0 flex items-center justify-center text-center text-5xl font-semibold text-white text-shadow-md"
-    >
-      <%= spot.title %>
-    </span>
-  </a>
-  <% }) %>
+  <% spots.forEach(spot=> { %>
+    <a href="#" class="relative block">
+      <img src="<%= spot.image_path %>" alt="Spot för <%= spot.title.toLowerCase()%>"
+        class="h-80 w-full rounded-md object-cover" />
+      <span
+        class="absolute inset-0 flex items-center justify-center text-center text-5xl break-all font-semibold text-white text-shadow-md">
+        <%= spot.title %>
+      </span>
+    </a>
+    <% }) %>
 </section>
