@@ -1,4 +1,4 @@
-<div class="w-full p-5">
+<section class="w-full p-5">
   <div class="flex justify-between mb-6 gap-10">
     <h2 class="text-2xl font-bold">Produkter</h2>
 
@@ -12,25 +12,25 @@
   </div>
   
   <!-- Table -->
-  <div class="rounded-ms overflow-hidden">
+  <div class="rounded-md border overflow-hidden">
     <table class="min-w-full text-left">
       <thead class="bg-gray-200">
-        <tr class="even:bg-gray-100 border">
-          <th class="px-4 py-3 border">Namn</th>
-          <th class="px-4 border">SKU</th>
-          <th class="px-4 border">Pris</th>
+        <tr class="even:bg-gray-100 border-b">
+          <th class="p-4 font-semibold">Namn</th>
+          <th class="p-4 border-l font-semibold">SKU</th>
+          <th class="p-4 border-l font-semibold">Pris</th>
         </tr>
       </thead>
 
       <tbody>
-        <% products.forEach((product, index) => { %>
-          <tr class="even:bg-gray-100 <%= index === products.length - 1 ? 'border-b' : '' %>">
-            <td class="px-6 py-4 border-l"><%= product.title %></td>
-            <td class="px-4 border-l"><%= product.sku %></td>
-            <td class="px-4 border-l border-r"><%= product.price %> kr</td>
+        <% products.forEach((product) => { %>
+          <tr class="even:bg-gray-100">
+            <td class="p-4"><%= product.title %></td>
+            <td class="p-4 border-l"><%= product.sku %></td>
+            <td class="p-4 border-l"><%= product.price %> SEK</td>
           </tr>
         <% }) %>
       </tbody>
     </table>
   </div>
-</div>
+</section>

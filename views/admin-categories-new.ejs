@@ -4,18 +4,17 @@
 
   <div class="mt-2">
     <label for="namn" class="font-semibold block mb-1">Namn</label>
-    <input required id="namn" name="name" type="text" maxlength="25" placeholder="Ange namn"
-      class="border-2 rounded-md px-2 py-1 w-68">
+    <input required id="namn" name="name" type="text" maxlength="25" placeholder="Ange namn" class="border-2 rounded-md px-2 py-1 w-68">
   </div>
 
   <% if (locals.nameError) { %>
     <p class="text-red-500 text-sm mt-1">
       <%= nameError %>
     </p>
-    <% } %>
+  <% } %>
 
-      <button class="button mt-4 py-2 font-semibold">
-        Lägg till
-      </button>
+  <button class="button mt-4 py-2 font-semibold">
+    Lägg till
+  </button>
 
 </form>
