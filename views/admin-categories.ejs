@@ -1,4 +1,4 @@
-<div class="w-full p-5">
+<section class="w-full p-5">
   <div class="mb-6 flex justify-between gap-10">
     <h2 class="text-2xl font-bold">Kategorier</h2>
 
@@ -12,22 +12,22 @@
   </div>
 
   <!-- Table -->
-  <div class="overflow-hidden rounded-md border">
+  <div class="border rounded-md overflow-hidden">
     <table class="w-full text-left">
       <thead class="bg-gray-200">
-        <tr class="even:bg-gray-100">
-          <th class="border-b px-6 py-3 font-semibold">Namn</th>
+        <tr class="even:bg-gray-100 border-b">
+          <th class="p-4 font-semibold">Namn</th>
         </tr>
       </thead>
 
       <tbody>
-  <% categories.forEach(category => { %>
-    <tr class="even:bg-gray-100">
-      <td class="px-6 py-4"><%= category.name %></td>
-    </tr>
-  <% }) %>
-</tbody>
+        <% categories.forEach(category => { %>
+        <tr class="even:bg-gray-100">
+          <td class="p-4"><%= category.name %></td>
+        </tr>
+        <% }) %>
+      </tbody>
 
     </table>
   </div>
-</div>
+</section>

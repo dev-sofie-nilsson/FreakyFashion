@@ -12,58 +12,58 @@
     <p class="text-red-500 text-lg">
       <%= nameError %>
     </p>
-    <% } %>
+  <% } %>
 
-      <!-- Beskrivning input -->
-      <div class="form-div">
-        <label for="description" class="font-bold">Beskrivning</label>
-        <textarea required name="description" id="description" placeholder="Ange beskrivning"
-          class="input-base max-w-lg"></textarea>
-      </div>
+  <!-- Beskrivning input -->
+  <div class="form-div">
+    <label for="description" class="font-bold">Beskrivning</label>
+    <textarea required name="description" id="description" placeholder="Ange beskrivning"
+    class="input-base max-w-lg"></textarea>
+  </div>
 
-      <!-- Välj fil input -->
-      <div class="form-div">
-        <label for="image" class="font-bold">Bild</label>
-        <input required type="file" name="image" id="image" class="hidden" />
-        <label for="image" tabindex="0" class="button">Välj fil</label>
-      </div>
+  <!-- Välj fil input -->
+  <div class="form-div">
+    <label for="image" class="font-bold">Bild</label>
+    <input required type="file" name="image" id="image" class="hidden" />
+    <label for="image" tabindex="0" class="button">Välj fil</label>
+  </div>
 
-      <% if (locals.fileError) { %>
-        <p class="text-red-500 text-lg">
-          <%= fileError %>
-        </p>
-        <% } %>
+  <% if (locals.fileError) { %>
+    <p class="text-red-500 text-lg">
+      <%= fileError %>
+    </p>
+  <% } %>
 
-          <!-- Märke input -->
-          <div class="form-div">
-            <label for="brand" class="font-bold">Märke</label>
-            <input required type="text" name="brand" id="brand" class="input-base max-w-lg" placeholder="Ange märke" />
-          </div>
+  <!-- Märke input -->
+  <div class="form-div">
+    <label for="brand" class="font-bold">Märke</label>
+    <input required type="text" name="brand" id="brand" class="input-base max-w-lg" placeholder="Ange märke" />
+  </div>
 
-          <!-- SKU input -->
-          <div class="form-div">
-            <label for="sku" class="font-bold">SKU</label>
-            <input required type="text" name="sku" id="sku" class="input-base max-w-28" placeholder="Ange SKU" />
-          </div>
+  <!-- SKU input -->
+  <div class="form-div">
+    <label for="sku" class="font-bold">SKU</label>
+    <input required type="text" name="sku" id="sku" class="input-base max-w-28" placeholder="Ange SKU" />
+  </div>
 
-          <!-- Pris input -->
-          <div class="form-div">
-            <label for="price" class="font-bold">Pris</label>
-            <input required type="number" name="price" id="price" class="input-base no-arrows max-w-28" />
-          </div>
+  <!-- Pris input -->
+  <div class="form-div">
+    <label for="price" class="font-bold">Pris</label>
+    <input required type="number" name="price" id="price" class="input-base no-arrows max-w-28" />
+  </div>
 
-          <!-- Kategori dropdown -->
-          <div class="form-div">
-            <label for="category" class="font-bold">Kategori</label>
-            <select required name="category" id="category" class="input-base max-w-lg">
-              <option value="" disabled selected hidden>Välj kategori</option>
-              <% categories.forEach(category=> { %>
-                <option value="<%= category.id %>">
-                  <%= category.name %>
-                </option>
-                <% }) %>
-            </select>
-          </div>
+  <!-- Kategori dropdown -->
+  <div class="form-div">
+    <label for="category" class="font-bold">Kategori</label>
+    <select required name="category" id="category" class="input-base max-w-lg">
+      <option value="" disabled selected hidden>Välj kategori</option>
+      <% categories.forEach(category=> { %>
+        <option value="<%= category.id %>">
+          <%= category.name %>
+        </option>
+      <% }) %>
+    </select>
+  </div>
 
-          <button type="submit" class="button mt-5">Lägg till</button>
+  <button type="submit" class="button mt-5">Lägg till</button>
 </form>

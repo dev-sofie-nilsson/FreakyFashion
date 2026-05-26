@@ -1,7 +1,7 @@
 <% categories.forEach(category => { %>
-        <% if (category.slug === categorySlug) { %>
-          <h1 class="text-center text-4xl font-bold"><%= category.name %></h1>
-        <% } %>
-      <% }) %>
+  <% if (category.slug === categorySlug) { %>
+    <h1 class="text-center text-4xl font-bold"><%= category.name %></h1>
+  <% } %>
+<% }) %>
       
-      <%- include("partials/product-grid.ejs", { products }) %>
+<%- include("partials/product-grid.ejs", { products }) %>

@@ -128,8 +128,8 @@ VALUES
     2
   ),
   (
-    'Silver armband',
-    'silver-armband',
+    'Armband i silver',
+    'armband-i-silver',
     'Vanligt armband gjort utav falskt silver',
     '/images/bracelet.png',
     'Bracy',
@@ -138,8 +138,8 @@ VALUES
     3
   ),
   (
-    'Guld halsband',
-    'guld-halsband',
+    'Halsband i guld',
+    'halsband-i-guld',
     'Halsband i konstig form',
     '/images/necklace.png',
     'Necky',
