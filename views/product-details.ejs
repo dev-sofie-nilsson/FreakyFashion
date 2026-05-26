@@ -1,43 +1,37 @@
-    <!-- TODO: Formatting breaks page... -->
-    <section class="p-4 sm:flex sm:flex-row sm:gap-4">
-        <!-- Container with product img + icon -->
-        <div
-          class="relative aspect-4/5 rounded-md border sm:w-1/2 lg:max-w-2xl"
-        >
-          <img
-            src="<%= productDetails.image_path %>"
-            alt="Svart T-shirt"
-            class="size-full object-contain"
-          />
-          <img
-            src="/images/heart.png"
-            alt="Favorit"
-            class="absolute right-4 bottom-4"
-          />
-        </div>
-        <!-- Container with product info -->
-        <div class="space-y-4 pt-4 sm:p-4 font-semibold italic sm:w-1/2 lg:max-w-2/5">
-          <h3 class="text-2xl font-normal"><%= productDetails.title %></h3>
-          <p class="font-normal"><%= productDetails.brand %></p>
+<section>
+  <div class="p-4 sm:flex sm:flex-row sm:gap-4">
+    <!-- Container with product img + icon -->
+    <div class="relative aspect-4/5 rounded-md border sm:w-1/2 lg:max-w-2xl">
+      <img src="<%= productDetails.image_path %>" alt="Svart T-shirt" class="size-full object-contain" />
+      <img src="/images/heart.png" alt="Favorit" class="absolute right-4 bottom-4" />
+    </div>
+    <!-- Container with product info -->
+    <div class="space-y-4 pt-4 sm:p-4 font-semibold italic sm:w-1/2 lg:max-w-2/5">
+      <h3 class="text-2xl font-normal">
+        <%= productDetails.title %>
+      </h3>
+      <p class="font-normal">
+        <%= productDetails.brand %>
+      </p>
 
-          <p><%= productDetails.details %></p>
-          <p><%= productDetails.price %> SEK</p>
-          <button
-            class="w-full rounded-md border p-4 font-bold not-italic sm:w-auto"
-          >
-            Lägg i varukorg
-          </button>
-        </div>
-      </section>
-      <h2 class="mt-10 hidden text-center text-2xl sm:block">
-        Liknande produkter
-      </h2>
-      <!-- Using product-card partial because wireframe shows a grid of 3 -->
-       <!-- TODO: Autorename not working? -->
-      <div
-        class="mt-4 hidden grid-cols-3 gap-10 p-4 sm:grid lg:mx-auto lg:max-w-[2300px]"
-      >
-        <% similarProducts.forEach(prod => { %>
-          <%-include("partials/product-card.ejs", {product: prod})%>
-        <% }) %>
-      </div>
+      <p>
+        <%= productDetails.details %>
+      </p>
+      <p>
+        <%= productDetails.price %> SEK
+      </p>
+      <button class="w-full rounded-md border p-4 font-bold not-italic sm:w-auto">
+        Lägg i varukorg
+      </button>
+    </div>
+  </div>
+  <h2 class="mt-10 hidden text-center text-2xl sm:block">
+    Liknande produkter
+  </h2>
+  <!-- Using product-card partial because wireframe shows a grid of 3 -->
+  <div class="mt-4 hidden grid-cols-3 gap-10 p-4 sm:grid lg:mx-auto lg:max-w-[2300px]">
+    <% similarProducts.forEach(prod=> { %>
+      <%- include("partials/product-card.ejs", {product: prod})%>
+    <% }) %>
+  </div>
+</section>
