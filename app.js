@@ -13,6 +13,7 @@ const adminRouter = require("./routes/admin/index");
 const adminProducts = require("./routes/admin/products");
 const adminCategories = require("./routes/admin/categories");
 
+
 const app = express();
 
 // view engine setup
@@ -33,6 +34,7 @@ app.use("/search", searchRouter);
 app.use("/admin", adminRouter);
 app.use("/admin/products", adminProducts);
 app.use("/admin/categories", adminCategories);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
